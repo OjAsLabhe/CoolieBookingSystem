@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Navigation Bar styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #444;
+    color: #fff;
+    width: 200px;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main Content styles */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.widget {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.widget h3 {
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Railway Dashboard</h1>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Trains</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Tickets</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Passengers</a></li>
+            <li><a href="#">Stations</a></li>
+            <li><a href="#">Employees</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h2>Welcome to Railway Dashboard</h2>
+            <div class="widgets">
+                <div class="widget">
+                    <h3>Train Status</h3>
+                    <p>Current Status: Running on Time</p>
+                </div>
+                <div class="widget">
+                    <h3>Ticket Sales</h3>
+                    <p>Total Tickets Sold: 500</p>
+                </div>
+                <div class="widget">
+                    <h3>Popular Routes</h3>
+                    <p>Most Popular: City A to City B</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

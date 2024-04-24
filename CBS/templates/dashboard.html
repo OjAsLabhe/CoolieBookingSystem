@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>BaggageBuddy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- Google fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a0f796b7e8.js" crossorigin="anonymous"></script>
+
+<!-- Bootstrap Scripts  -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+  <style>
+    body {
+  font-family: "Montserrat";
+  font-style: "oblique";
+}
+
+#title {
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  background: url("{{url_for('static', filename = 'images/img1.jpg')}}") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container-fluid {
+  padding: 3% 15%;
+}
+
+h1 {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.icons {
+  color: #fc7d3d;
+  margin-bottom: 1rem;
+}
+
+.icons:hover {
+  color: #fe5a07;
+}
+
+h2 {
+  font-family: "Montserrat-Bold";
+  font-size: 3rem;
+  line-height: 1.5
+}
+
+h3 {
+  font-family: 'Poppins',sans-serif;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+p {
+  font-weight: bold;
+  color: #8f8f8f;
+}
+
+/* Navigation Bar */
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+  align-items: center;
+}
+
+.navbar-brand img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.navbar-brand h2 {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.navbar-brand .logo{
+  font-size: 30px;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+}
+
+.ion-icons {
+  font-size: large;
+}
+
+/* Boooking-Button */
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+/* Features */
+#features {
+  padding: 7% 16%;
+  background-color: #fff;
+  position: relative;
+}
+
+.feature-box {
+  text-align: center;
+  padding: 5%;
+}
+
+/* Form */
+#form {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: url("{{url_for('static', filename = 'images/img3.jpg')}}") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper {
+  width: 850px;
+  background: rgba(255, 255, 255, .1);
+  border: 2px solid rgba(255, 255, 255, .3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(10px);
+  height: 555px;
+  border-radius: 10px;
+  color: #fff;
+  padding: 40px 35px 55px;
+  margin: 0 10px;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wrapper .input-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input-box .input-field {
+  position: relative;
+  width: 48%;
+  height: 50px;
+  margin: 13px 0;
+}
+
+.input-box .input-field input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 6px;
+  padding: 15px 15px 15px 40px;
+}
+
+.input-box .input-field label {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 6px;
+  padding: 15px 15px 15px 40px;
+}
+
+.input-box .input-field input::placeholder {
+  color: #fff;
+}
+
+.input-box .input-field i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.wrapper label {
+  display: inline-block;
+  font-size: 14.5px;
+  margin: 10px 0 23px;
+  padding-bottom: 0px;
+  font-size: x-large;
+}
+
+.wrapper label input {
+  accent-color: #fff;
+  margin-right: 5px;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .input-box .input-field {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+
+/* About us */
+#aboutus {
+  background: #f6e5e5;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  background: #f6e5e5;
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;  
+}
+
+.content-section {
+  float: left;
+  width: 55%;
+}
+
+.content-section .title {
+  padding-top: 0px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.content-section .content h3 {
+  margin-top: 20px;
+  color: #000;
+  font-size: 35px;
+}
+
+.content-section .content p{
+  padding-top: 30px;
+  color: #000;
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.content-section .content .button {
+  margin-top: 80px;
+}
+.content-section .content .button a {
+  background-color: #000;
+  padding: 12px 40px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 1.5px;
+}
+
+.content-section .content .button a:hover {
+  background-color: #fc7d3d;
+  color: #fff;
+}
+
+/* Footer section */
+#footer {
+  text-align: center;
+  padding: 7% 15%;
+}
+
+.social-icon {
+  margin: 20px 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  #title {
+    text-align: center;
+  }
+  .title-image{
+    position: static;
+    transform: rotate(0);
+  }
+
+  .container {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;  
+  }
+  .content-section {
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .content-section .title{
+    text-align: center;
+    font-size: 19px;
+  }
+  .content-section .content .button {
+    text-align: center;
+  }
+  .content-section .content .button a {
+    padding: 9px 30px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Title -->
+  <section id="title">
+    <div class="container-fluid">
+    <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+          <img src="{{url_for('static', filename = 'images/bg.jpg')}}"  alt="logo">
+          <h2>BaggageBuddy</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#title">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#features">Services</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#aboutus">About Us</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#footer">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="Heading">Let us do the heavy lifting and quickly reserve trustworthy coolie services.</h1>
+          <a href="#form"><button type="button" class="btn btn-light btn-lg download-button"><ion-icon name="train"></ion-icon> Book a coolie</button></a>     
+
+          <button type="button" class="btn btn-light btn-lg download-button"><ion-icon name="bookmark"></ion-icon> My Bookings</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Title Ended-->
+  </section>
+
+
+  <!-- Service -->
+
+  <section id="features">
+
+    <div class="row">
+      <div class="feature-box col-lg-4">
+        <i class="icons fa-sharp fa-solid fa-circle-check fa-4x"></i>
+        <h3>Easy to use.</h3>
+        <p>A user-friendly interface ensures that our platform is easy to use, even for those new to technology.</p>
+      </div>
+
+      <div class="feature-box col-lg-4">
+        <i class="icons fa-solid fa-bullseye fa-4x"></i>
+        <h3>Elite Clientele</h3>
+        <p>We offer elite services for discerning individuals, ensuring tailored solutions and unparalleled experiences.</p>
+      </div>
+
+      <div class="feature-box col-lg-4">
+        <i class="icons fa-solid fa-heart fa-4x"></i>
+        <h3>Guaranted to work.</h3>
+        <p>Guaranteed effectiveness assured, delivering reliable results backed by our commitment to quality and satisfaction.</p>
+      </div>
+    </div>
+
+  <!-- Service Ended -->
+  </section>
+
+
+  <!-- Form -->
+  <section id="form">
+    <div class="wrapper">
+      <form action="">
+        <h1>Book a Coolie</h1>
+
+        <div class="input-box">
+          <div class="input-field">
+            <input type="text" placeholder="Full Name" required>
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-field">
+            <input type="number" placeholder="Age" required>
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <div class="input-field">
+            <input type="text" placeholder="Gender" required>
+            <i class="fa-solid fa-person-half-dress"></i>
+          </div>                   
+          <div class="input-field">
+            <input type="number" placeholder="Phone Number" required>
+            <i class="fa-solid fa-phone"></i>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <div class="input-field">
+            <input type="number" placeholder="No. of bags" required>
+            <i class="fa-solid fa-suitcase-rolling"></i>
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Total weight of the bags" required>
+            <i class="fa-solid fa-bars"></i>            
+          </div>
+        </div>
+
+        <label><input type="checkbox">I hereby confirm that the above information provided is correct and confirm the booking.</label>
+
+        <button type="submit" class="btn">Book a coolie</button>
+      </form>
+      
+
+    </div>
+  <!-- Form Ended -->
+  </section>
+
+
+  <!-- About Us -->
+  <section id="aboutus">
+    <div class="section">
+      <div class="container">
+        <div class="content-section">
+          <div class="title">
+            <h1>About Us</h1>
+          </div>
+          <div class="content">
+            <h3>Transforming travel with seamless luggage assistance solutions.</h3>
+            <p>We're transforming travel with our innovative coolie booking system, revolutionizing how luggage assistance is provided at every journey. Our seamless solutions ensure travelers experience convenience and efficiency like never before, making their trips stress-free and enjoyable. Say goodbye to heavy bags and hello to hassle-free travel!</p>
+            <div class="button">
+              <a href="">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- About Us Ended -->
+  </section>
+
+
+  <!-- Footer -->
+  <footer id="footer">
+    <i class=" social-icon fa-brands fa-facebook-f"></i>
+    <i class=" social-icon fa-brands fa-twitter"></i>
+    <i class=" social-icon fa-brands fa-instagram"></i>
+    <i class=" social-icon fa-solid fa-envelope"></i>
+    <p>© Copyright 2024 BaggageBuddy</p>
+
+  </footer>
+
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+
+</html>
